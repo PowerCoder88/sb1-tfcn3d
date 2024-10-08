@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Wikipedia Summarizer",
+  "version": "1.0",
+  "description": "Summarizes Wikipedia pages and highlights key information",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "https://en.wikipedia.org/*",
+    "https://*.wikipedia.org/*"
+  ],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.wikipedia.org/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
